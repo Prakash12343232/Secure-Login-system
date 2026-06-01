@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure Registration terminal for static presentation.">
+    <title>Create Secure Account - Secure Login System</title>
+    
+    <!-- Premium Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Popup Banners Injection Point -->
+    <div class="alerts-container" id="alerts-container"></div>
+
+    <!-- Navigation Header -->
+    <header class="app-header">
+        <nav class="navbar container">
+            <a href="index.html" class="nav-logo">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <span class="logo-text">SECURE<span class="logo-highlight">AUTH</span></span>
+            </a>
+            
+            <ul class="nav-links" id="header-nav-links">
+                <li><a href="login.html" class="nav-item"><i class="fa-solid fa-lock"></i> Login</a></li>
+                <li><a href="register.html" class="nav-item nav-btn-register"><i class="fa-solid fa-user-plus"></i> Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="app-main container">
+        <div class="auth-card-container fade-in">
+            <div class="auth-card">
+                <div class="auth-card-header">
+                    <div class="header-logo-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <h2>Register Account</h2>
+                    <p>Create credentials for presentation demonstration</p>
+                </div>
+
+                <!-- Registration Form -->
+                <form class="auth-form" id="register-form" novalidate>
+                    <!-- Full Name Input -->
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-signature input-icon"></i>
+                            <input type="text" id="name" class="form-control" placeholder="Jane Doe" required autocomplete="name">
+                        </div>
+                    </div>
+
+                    <!-- Email Input -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-envelope input-icon"></i>
+                            <input type="email" id="email" class="form-control" placeholder="jane@example.com" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <!-- Username Input -->
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-user-tag input-icon"></i>
+                            <input type="text" id="username" class="form-control" placeholder="janedoe" required autocomplete="username">
+                        </div>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-key input-icon"></i>
+                            <input type="password" id="password" class="form-control" placeholder="Create secure password" required autocomplete="new-password">
+                            <button type="button" class="password-toggle-btn" id="password-toggle" aria-label="Toggle password visibility">
+                                <i class="fa-solid fa-eye eye-show"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Dynamic Password Strength Indicator -->
+                        <div class="password-strength-container" id="strength-container" style="display: none;">
+                            <div class="strength-bar-bg">
+                                <div class="strength-bar-fill" id="strength-bar"></div>
+                            </div>
+                            <div class="strength-labels">
+                                <span class="strength-text" id="strength-text">Password Strength</span>
+                                <span class="password-requirements"><i class="fa-solid fa-info-circle"></i> Min 8 characters</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password Input -->
+                    <div class="form-group">
+                        <label for="confirm_password">Confirm Password</label>
+                        <div class="input-icon-wrapper">
+                            <i class="fa-solid fa-circle-check input-icon"></i>
+                            <input type="password" id="confirm_password" class="form-control" placeholder="Confirm your password" required autocomplete="new-password">
+                        </div>
+                        
+                        <!-- Confirm check text label -->
+                        <div class="match-check-container" id="match-container" style="display: none; margin-top: 6px; font-size: 11px; font-weight: 600;">
+                            <span class="match-text" id="match-text"></span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block btn-submit" id="submit-btn">
+                        <span class="btn-text"><i class="fa-solid fa-user-shield"></i> Register Account</span>
+                    </button>
+                </form>
+
+                <div class="auth-card-footer">
+                    <p>Already have an account? <a href="login.html" class="footer-link">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 SecureAuth Inc. Internship Presentation Prototype.</p>
+            <div class="footer-badges">
+                <span class="presentation-badge"><i class="fa-solid fa-box"></i> Static Presentation Mode</span>
+                <span class="presentation-badge"><i class="fa-solid fa-database"></i> JS LocalStorage Database</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Controller Script -->
+    <script src="script.js"></script>
+</body>
+</html>

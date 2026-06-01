@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard portal for static internship presentation.">
+    <title>Dashboard - Secure Login System</title>
+    
+    <!-- Premium Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Design System CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Popup Banners Injection Point -->
+    <div class="alerts-container" id="alerts-container"></div>
+
+    <!-- Navigation Header -->
+    <header class="app-header">
+        <nav class="navbar container">
+            <a href="index.html" class="nav-logo">
+                <i class="fa-solid fa-shield-halved logo-icon"></i>
+                <span class="logo-text">SECURE<span class="logo-highlight">AUTH</span></span>
+            </a>
+            
+            <ul class="nav-links" id="header-nav-links">
+                <!-- Dynamically bound by script.js -->
+                <li><a href="dashboard.html" class="nav-item"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="#" id="logout-nav-link" class="nav-item btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard Workspace -->
+    <main class="dashboard-layout fade-in" id="dashboard-container">
+        
+        <!-- Welcome banner segment -->
+        <div class="dashboard-header">
+            <div class="welcome-text">
+                <h1>Welcome back, <span class="user-highlight" id="welcome-user-name">Loading...</span></h1>
+                <p>Presentation prototype sandbox active. Browser session is secured.</p>
+            </div>
+            <div class="header-status">
+                <span class="demo-pill">
+                    <i class="fa-solid fa-circle-check"></i> PRESENTATION ACTIVE
+                </span>
+            </div>
+        </div>
+
+        <!-- Layout grid containing 3 cards -->
+        <div class="dashboard-grid">
+            
+            <!-- Card 1: Dynamic User Profile Details -->
+            <div class="dashboard-card">
+                <div class="card-title-bar">
+                    <i class="fa-solid fa-user-shield card-icon"></i>
+                    <h3>User Profile Details</h3>
+                </div>
+                
+                <div class="profile-details-list">
+                    <div class="profile-item">
+                        <span class="profile-label">Full Name</span>
+                        <span class="profile-value" id="profile-full-name">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Email Address</span>
+                        <span class="profile-value" id="profile-email">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Unique Username</span>
+                        <span class="profile-value" id="profile-username">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Account Created On</span>
+                        <span class="profile-value" id="profile-joined">Loading...</span>
+                    </div>
+                </div>
+
+                <div class="card-action-bar" style="margin-top: auto; padding-top: 12px;">
+                    <button id="logout-btn" class="btn btn-danger btn-block"><i class="fa-solid fa-right-from-bracket"></i> Invalidate Session (Log Out)</button>
+                </div>
+            </div>
+
+            <!-- Card 2: Technical Presentation Checkpoints -->
+            <div class="dashboard-card">
+                <div class="card-title-bar">
+                    <i class="fa-solid fa-shield-halved card-icon"></i>
+                    <h3>Interactive Presentation Targets</h3>
+                </div>
+                
+                <div class="security-list">
+                    <div class="security-item">
+                        <i class="fa-solid fa-circle-check check-icon"></i>
+                        <span>Client-Side LocalStorage Persistence</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fa-solid fa-circle-check check-icon"></i>
+                        <span>Interactive Form Validation Cues</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fa-solid fa-circle-check check-icon"></i>
+                        <span>Dynamic Password Strength Analyzer</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fa-solid fa-circle-check check-icon"></i>
+                        <span>Dynamic Password Match Tracker</span>
+                    </div>
+                    <div class="security-item">
+                        <i class="fa-solid fa-circle-check check-icon"></i>
+                        <span>Router Session Access Guards</span>
+                    </div>
+                </div>
+
+                <div class="security-disclaimer">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p style="margin-top: 4px; font-size: 11px;">This system operates 100% locally. The user accounts you create on the registration page immediately integrate into your local browser's database segment.</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Database & Session Activity Log -->
+            <div class="dashboard-card">
+                <div class="card-title-bar">
+                    <i class="fa-solid fa-clock-rotate-left card-icon"></i>
+                    <h3>Dynamic Sandbox Activity Logs</h3>
+                </div>
+                
+                <div class="logs-list" id="session-logs-list">
+                    <!-- Loaded dynamically via script.js -->
+                    <div style="text-align: center; color: var(--text-muted); padding: 20px 0;">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i> Reading sandbox indexes...
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 SecureAuth Inc. Internship Presentation Prototype.</p>
+            <div class="footer-badges">
+                <span class="presentation-badge"><i class="fa-solid fa-box"></i> Static Presentation Mode</span>
+                <span class="presentation-badge"><i class="fa-solid fa-database"></i> JS LocalStorage Database</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Controller Script -->
+    <script src="script.js"></script>
+</body>
+</html>
